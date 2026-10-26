@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMBAR LUXURY - Jabones Artesanales</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 512 512%22><path fill=%22%2395633e%22 d=%22M272 96c-78.6 0-145.1 51.5-167.7 122.5c-33.6 10.2-58.3 41.2-58.3 77.5c0 44.2 35.8 80 80 80l32 0 0 32c0 44.2 35.8 80 80 80s80-35.8 80-80l0-32 32 0c44.2 0 80-35.8 80-80c0-36.3-24.7-67.3-58.3-77.5C417.1 147.5 350.6 96 272 96z%22/></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-leaf"></i></div>
+        <div>
+          <h1 class="brand-name">AMBAR LUXURY</h1>
+          <p class="brand-tagline">Jabones Artesanales & Cuidado Natural</p>
+        </div>
+      </div>
+
+      <button class="cart-btn" onclick="openCartModal()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Mi Pedido</span>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-subtitle">100% Natural & Artesanal</span>
+      <h2>Colección Completa AMBAR LUXURY</h2>
+      <p>Haz clic en cualquier jabón para ver su información completa. ¡Elige tus favoritos!</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-container">
+    
+<!-- BARRA DE FILTROS -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProducts('ALL', this)"><i class="fa-solid fa-border-all"></i> Todos (20)</button>
+      <button class="filter-btn highlight-filter" onclick="filterProducts('Estropajo', this)">
+        <i class="fa-solid fa-spa"></i> Con Estropajo
+      </button>
+      <button class="filter-btn highlight-filter" onclick="filterProducts('Manos', this)">
+        <i class="fa-solid fa-hands-bubbles"></i> Para Manos
+      </button>
+      <button class="filter-btn" onclick="filterProducts('Hidratacion', this)"><i class="fa-solid fa-droplet"></i> Hidratación y Calma</button>
+      <button class="filter-btn" onclick="filterProducts('Regenerante', this)"><i class="fa-solid fa-wand-magic-sparkles"></i> Regenerantes</button>
+      <button class="filter-btn" onclick="filterProducts('Aclarantes', this)"><i class="fa-solid fa-sun"></i> Aclarantes</button>
+      <button class="filter-btn" onclick="filterProducts('Exfoliante', this)"><i class="fa-solid fa-fire"></i> Exfoliantes / Gym</button>
+    </div>
+
+    <!-- REJILLA DE PRODUCTOS -->
+    <div id="productsGrid" class="products-grid">
+      <!-- Carga dinámica -->
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-brand">AMBAR LUXURY</p>
+      <p class="footer-copy">Jabones Artesanales © Todos los derechos reservados</p>
+      <a href="https://wa.me/573159483123" target="_blank" class="footer-wa">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo: 315 948 3123
+      </a>
+    </div>
+  </footer>
+
+  <!-- MODAL DETALLE DE PRODUCTO -->
+  <div id="productModal" class="modal-overlay hidden">
+    <div class="modal-card product-detail-card">
+      <button class="detail-close" onclick="closeProductModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="detail-image-container">
+        <span id="modalProductTag" class="product-tag">Tag</span>
+        <img id="modalProductImg" src="" alt="Jabón" class="detail-image">
+      </div>
+      <div class="detail-body">
+        <h2 id="modalProductTitle" class="detail-title">Título del Jabón</h2>
+        <p id="modalProductBenefit" class="product-benefit">Beneficio principal</p>
+        <ul id="modalProductBullets" class="product-bullets">
+          <!-- Bullets dinámicos -->
+        </ul>
+        <div class="modal-detail-footer">
+          <button id="modalAddBtn" class="add-btn-large">
+            <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRITO -->
+  <div id="cartModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2><i class="fa-solid fa-bag-shopping"></i> Tu Pedido</h2>
+        <button class="close-btn" onclick="closeCartModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="cartItemsList" class="cart-items-list"></div>
+
+        <div id="cartEmptyMessage" class="cart-empty hidden">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <p>Aún no has agregado jabones a tu pedido.</p>
+        </div>
+
+        <div class="form-section">
+          <h3>Datos para el envío:</h3>
+          <div class="form-group">
+            <label>Tu Nombre Completo *</label>
+            <input type="text" id="custName" placeholder="Ej: María Camila Pérez">
+          </div>
+          <div class="form-group">
+            <label>Ciudad / Municipio *</label>
+            <input type="text" id="custCity" placeholder="Ej: Bogotá">
+          </div>
+          <div class="form-group">
+            <label>Dirección de Entrega / Barrio</label>
+            <input type="text" id="custAddress" placeholder="Ej: Calle 123 # 45-67">
+          </div>
+          <div class="form-group">
+            <label>Notas adicionales</label>
+            <textarea id="custNotes" rows="2" placeholder="Ej: Entregar en horario de la tarde..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button onclick="sendOrderToWhatsApp()" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
