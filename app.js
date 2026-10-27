@@ -76,7 +76,7 @@ const products = [
   {
     id: "manos-rosas",
     title: "Jabón de Manos - Aroma Floral Dulce",
-    price: 10000,
+    price: 15000,
     benefit: "Suaviza e hidrata (Diseño Colgante)",
     tag: "Para Manos",
     category: "Manos",
@@ -90,7 +90,7 @@ const products = [
   {
     id: "manos-uvas",
     title: "Jabón de Manos - Aroma a Uvas",
-    price: 10000,
+    price: 20000,
     benefit: "Aroma dulce y alta hidratación",
     tag: "Para Manos",
     category: "Manos",
@@ -104,7 +104,7 @@ const products = [
   {
     id: "manos-cafe",
     title: "Jabón de Manos - Aroma a Café",
-    price: 11000,
+    price: 15000,
     benefit: "Neutraliza olores en la cocina",
     tag: "Para Manos",
     category: "Manos",
