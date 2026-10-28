@@ -594,6 +594,20 @@ const products = [
       "Tonificante: Tonifica la piel y mejora la circulación",
       "Piel Sedosa: Suaviza y deja la piel sedosa y perfumada"
     ]
+  },
+  {
+    id: "colgante-fresa",
+    title: "Jabón de Fresa Colgante - Para Lavamanos",
+    price: 15000,
+    benefit: "Decora, perfuma y suaviza - Dulce para tu baño",
+    tag: "Para Manos",
+    category: "Manos",
+    image: "img/colgante-fresa.jpeg",
+    bullets: [
+      "Decorativo: Diseño colgante práctico y elegante para lavamanos[cite: 27]",
+      "Práctico: Aroma dulce que perfuma todo el espacio[cite: 27]",
+      "Piel Suave: Humectante y 100% artesanal[cite: 27]"
+    ]
   }
 ];
 
