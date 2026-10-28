@@ -524,6 +524,76 @@ const products = [
       "Antiestrés: Aroma de rosas que relaja",
       "Piel Suave: Renueva y da luminosidad"
     ]
+  },
+  {
+    id: "girasol-carbon-activado-bicolor",
+    title: "Jabón de Carbón Activado - El Jabón Detox",
+    price: 10000,
+    benefit: "Purifica y desintoxica - Carbón activado que elimina impurezas y toxinas",
+    tag: "Girasol Detox",
+    category: "Exfoliante",
+    image: "img/girasol-carbon-activado-bicolor.jpeg",
+    bullets: [
+      "Detox Profundo: Elimina impurezas y purifica",
+      "Purificante: Controla grasa y limpia poros",
+      "Piel Purificada: Suaviza y equilibra"
+    ]
+  },
+  {
+    id: "girasol-patilla-burbujas",
+    title: "Jabón de Patilla - El Jabón Hidratante",
+    price: 10000,
+    benefit: "Hidrata, refresca y nutre - Patilla jugosa que suaviza y revitaliza",
+    tag: "Girasol Hidratante",
+    category: "Hidratacion",
+    image: "img/girasol-patilla-burbujas.jpeg",
+    bullets: [
+      "Hidratante: Hidrata profundamente y refresca",
+      "Nutritivo: Patilla rica en vitaminas que nutre",
+      "Piel Suave: Suaviza y rejuvenece"
+    ]
+  },
+  {
+    id: "girasol-limon",
+    title: "Jabón de Limón - El Jabón Aclarante",
+    price: 10000,
+    benefit: "Aclara, purifica y tonifica - Limón fresco que ilumina y limpia",
+    tag: "Girasol Aclarante",
+    category: "Aclarantes",
+    image: "img/girasol-limon.jpeg",
+    bullets: [
+      "Aclarante Natural: Aclara manchas y unifica tono[cite: 27]",
+      "Purificante: Controla grasa y limpia poros[cite: 27]",
+      "Piel Luminosa: Ilumina y refresca[cite: 27]"
+    ]
+  },
+  {
+    id: "panal-limon",
+    title: "Jabón de Limón - El Jabón Aclarante",
+    price: 10000,
+    benefit: "Aclara, purifica y tonifica - Limón fresco que ilumina y limpia",
+    tag: "Panal Aclarante",
+    category: "Aclarantes",
+    image: "img/panal-limon.jpeg",
+    bullets: [
+      "Aclarante Natural: Aclara manchas y unifica tono[cite: 28]",
+      "Purificante: Controla grasa y limpia poros[cite: 28]",
+      "Piel Luminosa: Ilumina y refresca[cite: 28]"
+    ]
+  },
+  {
+    id: "masajeador-rosas",
+    title: "Jabón de Rosas - El Jabón Romántico",
+    price: 10000,
+    benefit: "Suaviza, tonifica y perfuma - Rosas que embellecen y relajan",
+    tag: "Masajeador Romántico",
+    category: "Hidratacion",
+    image: "img/masajeador-rosas.jpeg",
+    bullets: [
+      "Hidratante Natural: Hidrata profundamente y nutre",
+      "Tonificante: Tonifica la piel y mejora la circulación",
+      "Piel Sedosa: Suaviza y deja la piel sedosa y perfumada"
+    ]
   }
 ];
 
